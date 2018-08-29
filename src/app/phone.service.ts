@@ -16,4 +16,9 @@ export class PhoneService {
     this.messageService.add('PhoneService: fetched phones');
     return of(PHONES);
   }
+
+  getPhone(id: number): Observable<Phone> {
+    this.messageService.add(`PhoneService: fetched phone id=${id}`);
+    return of(PHONES.find(phone => phone.id === id));
+  }
 }

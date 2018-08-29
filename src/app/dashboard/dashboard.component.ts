@@ -3,22 +3,22 @@ import { Phone } from '../phone';
 import { PhoneService } from '../phone.service';
 
 @Component({
-  selector: 'app-phones',
-  templateUrl: './phones.component.html',
-  styleUrls: ['./phones.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class PhonesComponent implements OnInit {
-
-  phones: Phone[]; 
-
+export class DashboardComponent implements OnInit {
+  phones: Phone[] = [];
+ 
   constructor(private phoneService: PhoneService) { }
-
+ 
   ngOnInit() {
     this.getPhones();
   }
-
-  getPhones(): void{
+ 
+  getPhones(): void {
     this.phoneService.getPhones()
-        .subscribe(phones => this.phones = phones);
+      .subscribe(phones => this.phones = phones.slice(1, 5));
   }
+
 }
