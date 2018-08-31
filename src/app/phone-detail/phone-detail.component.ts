@@ -34,4 +34,8 @@ export class PhoneDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    this.phoneService.updatePhone(this.phone)
+      .subscribe(() => this.goBack());
+  }
 }

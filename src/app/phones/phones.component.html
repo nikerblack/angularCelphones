@@ -1,9 +1,20 @@
 <h2>My Phones</h2>
+
+<div>
+  <label>Phone name:
+    <input #phoneName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(phoneName.value); phoneName.value=''">
+    Añadir
+  </button>
+</div>
+
 <ul class="phones">
   <li *ngFor="let phone of phones">
     <a routerLink="/detail/{{phone.id}}">
       <span class="badge">{{phone.id}}</span>{{phone.name}}
     </a>
+    <button class="delete" title="delete phone" (click)="delete(phone)">x</button>
   </li> 
 </ul>
-<app-phone-detail [phone]="selectedPhone"></app-phone-detail>
