@@ -12,7 +12,7 @@ import { PhoneService }  from '../phone.service';
 })
 export class PhoneDetailComponent implements OnInit {
 
-  phone: Phone;
+  @Input() phone: Phone;
  
   constructor(
     private route: ActivatedRoute,

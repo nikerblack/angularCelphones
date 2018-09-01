@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { PhoneSearchComponent } from './phone-search.component';
 
@@ -8,7 +10,8 @@ describe('PhoneSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhoneSearchComponent ]
+      declarations: [ PhoneSearchComponent ],
+      imports: [RouterTestingModule.withRoutes([]), HttpClientTestingModule]
     })
     .compileComponents();
   }));

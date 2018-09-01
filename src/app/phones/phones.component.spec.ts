@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { PhonesComponent } from './phones.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('PhonesComponent', () => {
   let component: PhonesComponent;
@@ -9,6 +10,7 @@ describe('PhonesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PhonesComponent ]
+      imports: [RouterTestingModule.withRoutes([]), HttpClientTestingModule],
     })
     .compileComponents();
   }));
@@ -19,7 +21,7 @@ describe('PhonesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 });
